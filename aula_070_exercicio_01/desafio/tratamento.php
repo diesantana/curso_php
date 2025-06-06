@@ -1,6 +1,4 @@
 <?php
-    // Funções auxiliares
-
     /**
     * Valida um campo numérico retornando o resultado da validação
     */
@@ -39,10 +37,10 @@
 
     // verifica se os números são válidos
     $isValidValue1 = validateNumericField($value1, 'text_valor_1');
-    $isValidValue2 = validateNumericField($value1, 'text_valor_2');
+    $isValidValue2 = validateNumericField($value2, 'text_valor_2');
 
     // SE HOUVER ERROS, REDIRECIONA DE VOLTA
-    if(!$isValidValue1 && !$isValidValue2) {
+    if(!$isValidValue1 || !$isValidValue2) {
         // Salva os dados na sessão para reapresentar no formulário
         $_SESSION['inputs'] = $inputs;
         // Redireciona de volta para o formulário
