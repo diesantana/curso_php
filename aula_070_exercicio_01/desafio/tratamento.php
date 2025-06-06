@@ -20,7 +20,7 @@
     // valor numérico positivo, volta para o formulário e apresenta esse erro.
 
     // verifica o valor 1
-    if(!is_numeric($value1)) {
+    if(!is_numeric($value1) || $value1 < 1) {
         // Se o valor não for numérico e positivo adicionamos mensagem de erro 
         $inputs['text_valor_1'] = [
             'value' => $value1,
@@ -35,7 +35,7 @@
     }
 
     // verifica o valor 2
-    if(!is_numeric($value2)) {
+    if(!is_numeric($value2) || $value2 < 1) {
         // Se o valor não for numérico e positivo adicionamos mensagem de erro 
         $inputs['text_valor_2'] = [
             'value' => $value2,
