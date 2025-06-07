@@ -1,7 +1,11 @@
 <?php
 
-// criar a função aqui ...
-
+    // Divide dois números e retorna o resultado
+    // Caso $value2 seja 0, retorna null
+    function division($value1, $value2) {
+        if($value2 == 0) return null;
+        return $value1 / $value2;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -21,9 +25,12 @@
         <?php 
             $valor1 = rand(0,10);
             $valor2 = rand(0,10);
+            $result = division($valor1, $valor2) ?? 'Divisão por zero';
         ?>
 
         <!-- apresentar os valores aqui -->
+        <p><?= "$valor1 : $valor2 = $result"  ?></p>
+         
 
     <?php endfor; ?>
 
