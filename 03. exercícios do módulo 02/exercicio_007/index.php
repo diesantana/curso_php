@@ -2,14 +2,10 @@
 
     $names = [ 'João Oliveira','Maria Teixeira','José Silva','Ana Santos','Pedro Rodrigues','Paulo Castro','Lucas Dinis','Luiz Matias','Luiza Oliveira','Paula Cardoso','Paulina Fernandes'];
 
-    $filteredNames = [];
-
-    foreach($names as $name) {
-
-        if(strlen($name) <= 12) {
-            array_push($filteredNames, $name); // adiciona nomes <= 12 caracteres ao array 
-        }
-    }
+    // Filtra nomes que têm 12 ou menos caracteres (ignorando espaços)
+    $filteredNames = array_filter($names, function($name) {
+        return strlen($name) <= 12;
+    });
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
