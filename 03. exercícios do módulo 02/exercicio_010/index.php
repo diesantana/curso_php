@@ -4,7 +4,7 @@
     function generateUniqueValues($amountValues) {
         $values = [];
 
-        while(count($values) < 20) {
+        while(count($values) < $amountValues) {
             $currentValue = rand(1, 100);
             if(in_array($currentValue, $values)) continue; 
             // se o valor já existir no array ignora o cód abaixo é ignorado
