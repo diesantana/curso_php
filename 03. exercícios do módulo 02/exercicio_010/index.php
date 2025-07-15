@@ -7,7 +7,7 @@
         while(count($values) < $amountValues) {
             $currentValue = rand(1, 100);
             if(in_array($currentValue, $values)) continue; 
-            // se o valor já existir no array ignora o cód abaixo é ignorado
+            // se o valor já existir no array o cód abaixo é ignorado
             $values[] = $currentValue;
         }
 
