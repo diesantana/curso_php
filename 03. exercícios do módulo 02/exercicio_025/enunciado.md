@@ -1,0 +1,2 @@
+### EXERCÍCIO 25 – Função com parâmetro padrão
+Crie uma função `bemVindo($nome)` que receba um valor padrão caso nenhum valor seja passado como argumento. A função deve exibir uma mensagem personalizada.
