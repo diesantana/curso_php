@@ -2,28 +2,25 @@
 // Código com más práticas de nomenclatura
 // Refatore o código abaixo para seguir as convenções e boas práticas de nomenclatura de variáveis:
 
-$n = "Carlos Eduardo";
-$i = 32;
-$e = "carlos@email.com";
-$t = "11987654321";
-$end = "Av. Principal, 500";
-$sal = 4500.75;
-$dp = "TI";
-$ATIVO = true;
-$dt_cad = "2023-04-15";
-$comentario_usuario = "Funcionário do mês";
+$name = "Carlos Eduardo";
+$age = 32;
+$email = "carlos@email.com";
+$phoneNumber = "11987654321";
+$address = "Av. Principal, 500";
+$salary = 4500.75;
+$department = "TI";
+$active = true;
+$registrationDate = "2023-04-15";
+$userComment = "Funcionário do mês";
 
 // Função que calcula o salário com bônus
-function calc_sal($s, $b) {
-    $res = $s + ($s * $b);
-    return $res;
+function calcSalary($salary, $bonus) {
+    return $salary + ($salary * $bonus);
 }
 
 // Exibir informações do funcionário
-echo "Funcionário: $n<br>";
-echo "Salário: R$ " . $sal . "<br>";
-echo "Salário com bônus: R$ " . calc_sal($sal, 0.15) . "<br>";
-
-// Seu código refatorado aqui:
+echo "Funcionário: $name<br>";
+echo "Salário: R$ " . $salary . "<br>";
+echo "Salário com bônus: R$ " . round(calcSalary($salary, 0.15), 2) . "<br>";
 
 ?>
