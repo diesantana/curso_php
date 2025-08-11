@@ -1,16 +1,11 @@
 <?php
 // LÓGICA PHP (complete)
 // 1. Crie um array $cursos com opções: PHP, JS, CSS
-// Seu código aqui
+$cursos = ['PHP', 'JS', 'CSS'];
 
 // 2. Capture os cursos selecionados ($_POST['cursos'] é um array)
-// Seu código aqui
+$cursosSelecionados = $_POST['cursos'] ?? ''; 
 
-// 3. Valide se pelo menos um curso foi selecionado
-// Seu código aqui
-
-// 4. Exiba os cursos selecionados em uma lista não ordenada
-// Seu código aqui
 ?>
 
 <!-- HTML (NÃO ALTERE) -->
@@ -31,10 +26,10 @@
         </select>
         <button type="submit">Enviar</button>
     </form>
-    <?php if (!empty($cursos_selecionados)): ?>
+    <?php if (!empty($cursosSelecionados)): ?>
         <h4>Cursos selecionados:</h4>
         <ul>
-            <?php foreach (/* Seu código aqui */ as $curso): ?>
+            <?php foreach ($cursosSelecionados as $curso): ?>
                 <li><?= htmlspecialchars($curso) ?></li>
             <?php endforeach; ?>
         </ul>
