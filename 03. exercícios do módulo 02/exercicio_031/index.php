@@ -22,17 +22,29 @@ INSTRUÇÕES:
 */
 
 // LÓGICA PHP (complete as partes faltantes)
+$nome;
+$email;
+$mensagem;
+$error = false;
 // 1. Verifique se o formulário foi enviado (método POST)
-// Seu código aqui
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // 2. Capture os campos: nome, email, mensagem (do $_POST)
+    $nome = $_POST['nome'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $mensagem = $_POST['mensagem'] ?? '';
+    
+    // 3. Valide se os campos não estão vazios
+    // 4. Se válido, armazene uma mensagem de sucesso em $feedback
+    if(!empty($nome) && !empty($email) && !empty($mensagem)) {
+        $error = false;
+        $feedback = 'Dados cadastrados corretamente';
+    } else {
+        $error = true;
+        $feedback = 'Os campos "Nome", "Email" e "Mensagem" são obrigatórios!';
+    }
 
-// 2. Capture os campos: nome, email, mensagem (do $_POST)
-// Seu código aqui
+}
 
-// 3. Valide se os campos não estão vazios
-// Seu código aqui
-
-// 4. Se válido, armazene uma mensagem de sucesso em $feedback
-// Seu código aqui
 ?>
 
 <!-- HTML (NÃO ALTERE) -->
@@ -52,7 +64,7 @@ INSTRUÇÕES:
     <h3>Formulário de Contato</h3>
     
     <?php if (!empty($feedback)): ?>
-        <p class="<?= (/* Seu código aqui (classe CSS condicional) */ ? 'sucesso' : 'erro') ?>">
+        <p class="<?= !$error ? 'sucesso' : 'erro' ?>">
             <?= htmlspecialchars($feedback) ?>
         </p>
     <?php endif; ?>
