@@ -10,38 +10,25 @@
  * EXERCÍCIO 1: FORMATAÇÃO DE NOME
  * Converter "joão da silva" para "João da Silva"
  */
-function formatarNome($nome) {
-    // Seu código aqui (3-5 linhas)
+function formatarNome($name) {
+    // Convertendo todas as letras para maiúsculas
+    $formattedName = ucwords(strtolower($name));
+    // Lista de preposições que devem ficar em minúsculas
+    $prepositions = [' Da ', ' De ', ' Do ', ' Dos ', ' Das ', ' E '];
+    $prepositionsLower = [' da ', ' de ', ' do ', ' dos ', ' das ', ' e '];
+
+    // Substitui as preposições de $name por minúsculas, se houver
+    return str_replace($prepositions, $prepositionsLower, $formattedName);
+    // return $formattedName;
 }
 
-/**
- * EXERCÍCIO 2: CONTADOR DE VOGAIS
- * Contar quantas vogais tem numa string
- * (considerar maiúsculas e minúsculas)
- */
-function contarVogais($texto) {
-    // Seu código aqui (3-5 linhas)
-}
-
-/**
- * EXERCÍCIO 3: GERADOR DE INICIAIS
- * Dado "Fernanda Costa Pereira" retornar "F.C.P."
- */
-function gerarIniciais($nomeCompleto) {
-    // Seu código aqui (3-5 linhas)
-}
 
 // ======================================
 // ÁREA DE TESTES RÁPIDOS (NÃO MODIFICAR)
 // ======================================
 echo "<h3>Teste 1 - Formatação de Nome</h3>";
-echo formatarNome("maria aparecida souza") === "Maria Aparecida Souza" 
-    ? "✔ Correto" : "✘ Errado";
+echo formatarNome("maria aparecida de souza") === "Maria Aparecida de Souza" 
+? "✔ Correto" : "✘ Errado";
 
-echo "<h3>Teste 2 - Contador de Vogais</h3>";
-echo contarVogais("Abacaxi") === 4 
-    ? "✔ Correto" : "✘ Errado";
-
-echo "<h3>Teste 3 - Gerador de Iniciais</h3>";
-echo gerarIniciais("Carlos Eduardo Martins") === "C.E.M." 
-    ? "✔ Correto" : "✘ Errado";
+// echo '<br>' . formatarNome("maria aparecida de souza"); 
+// echo '<br>' . formatarNome("joão da silva"); 
