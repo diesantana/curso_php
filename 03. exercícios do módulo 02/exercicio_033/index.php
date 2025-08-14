@@ -12,7 +12,14 @@
  * (considerar maiúsculas e minúsculas)
  */
 function contarVogais($texto) {
-    // Seu código aqui (3-5 linhas)
+    $vogais = ['a', 'e', 'i', 'o', 'u'];
+    $cont = 0;
+    $textoToLower = strtolower($texto); 
+    foreach($vogais as $vogal) {
+        $cont += substr_count($textoToLower, $vogal);
+    }
+
+    return $cont;
 }
 
 // ======================================
@@ -22,3 +29,5 @@ function contarVogais($texto) {
 echo "<h3>Teste - Contador de Vogais</h3>";
 echo contarVogais("Abacaxi") === 4 
     ? "✔ Correto" : "✘ Errado";
+echo "<br>";
+echo contarVogais("Abacaxi");
