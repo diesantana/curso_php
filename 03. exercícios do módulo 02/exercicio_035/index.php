@@ -31,7 +31,11 @@ $moedaPadrao = "BRL";      // Código da moeda utilizada
 // Seu código aqui: Converta as variáveis acima em constantes
 // Exemplo: define('NOME_CONSTANTE', valor);
 // ou: const NOME_CONSTANTE = valor;
-
+define('AGE_LIMIT', $limiteIdade);
+define('DISCOUNT_RATE', $taxaDesconto);
+define('SYSTEM_NAME', $nomeSistema);
+define('SYSTEM_VERSION', $versaoSistema);
+define('STANDARD_CURRENCY', $moedaPadrao);
 
 // PARTE 2: Utilizando constantes em funções
 
@@ -53,14 +57,14 @@ function verificarElegibilidade($idade, $valorCompra) {
     
     // 1. Verificar se a idade do usuário atende ao limite mínimo
     // Use a constante que você criou para o limite de idade
-    if (/* Seu código aqui */) {
+    if ($idade >= AGE_LIMIT) {
         $resultado['elegivel'] = true;
         $resultado['mensagem'] = 'Usuário elegível para cadastro.';
         
         // 2. Calcular desconto para clientes (se valor de compra > R$ 100)
         if ($valorCompra > 100) {
             // Use a constante que você criou para a taxa de desconto
-            $desconto = /* Seu código aqui */;
+            $desconto = $valorCompra * DISCOUNT_RATE;
             $resultado['desconto'] = $desconto;
             $resultado['valorFinal'] = $valorCompra - $desconto;
         }
@@ -80,9 +84,9 @@ function exibirInformacoesSistema() {
     // Use as constantes que você criou para nome, versão e moeda do sistema
     $info = "<div style='background-color: #f0f0f0; padding: 10px; border-radius: 5px;'>";
     $info .= "<h3>Informações do Sistema</h3>";
-    $info .= "<p><strong>Nome do Sistema:</strong> " . /* Sua constante aqui */ . "</p>";
-    $info .= "<p><strong>Versão:</strong> " . /* Sua constante aqui */ . "</p>";
-    $info .= "<p><strong>Moeda Padrão:</strong> " . /* Sua constante aqui */ . "</p>";
+    $info .= "<p><strong>Nome do Sistema:</strong> " . SYSTEM_NAME . "</p>";
+    $info .= "<p><strong>Versão:</strong> " . SYSTEM_VERSION . "</p>";
+    $info .= "<p><strong>Moeda Padrão:</strong> " . STANDARD_CURRENCY . "</p>";
     $info .= "</div>";
     
     return $info;
