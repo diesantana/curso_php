@@ -36,6 +36,7 @@ define('DISCOUNT_RATE', $taxaDesconto);
 define('SYSTEM_NAME', $nomeSistema);
 define('SYSTEM_VERSION', $versaoSistema);
 define('STANDARD_CURRENCY', $moedaPadrao);
+define('DESENVOLVEDOR', 'Diego');
 
 // PARTE 2: Utilizando constantes em funções
 
@@ -87,6 +88,7 @@ function exibirInformacoesSistema() {
     $info .= "<p><strong>Nome do Sistema:</strong> " . SYSTEM_NAME . "</p>";
     $info .= "<p><strong>Versão:</strong> " . SYSTEM_VERSION . "</p>";
     $info .= "<p><strong>Moeda Padrão:</strong> " . STANDARD_CURRENCY . "</p>";
+    $info .= "<p><strong>Desenvolvedor:</strong> " . DESENVOLVEDOR . "</p>";
     $info .= "</div>";
     
     return $info;
