@@ -3,37 +3,58 @@
 // Este exercício pratica operações fundamentais com sessions
 
 // 1. Inicie uma sessão
+session_start();
 
+// Define o fuso horário da aplicação
+date_default_timezone_set('America/Sao_Paulo');
 
 // 2. Armazene os seguintes dados na sessão:
 //    - nome: seu nome
 //    - email: seu email
 //    - ultimo_acesso: hora atual (use a função time())
-// Seu código aqui
+$_SESSION['nome'] = 'Diego';
+$_SESSION['email'] = 'diego@gmail.com';
+$_SESSION['utlimo_acesso'] = date('d-m-Y H:i:s' ,time());
 
 // 3. Verifique se a sessão 'contador_visitas' já existe
 //    - Se existir, incremente seu valor em 1
 //    - Se não existir, crie com valor inicial 1
-// Seu código aqui
+if(!empty($_SESSION['contador_visitas'])) {
+    $_SESSION['contador_visitas']++;
+} else {
+    $_SESSION['contador_visitas'] = 1;
+}
 
 // 4. Exiba todos os dados armazenados na sessão atual
 echo "<h3>Dados da Sessão:</h3>";
 echo "<pre>";
-// Seu código aqui
+print_r($_SESSION);
 echo "</pre>";
 
-// 5. Remova apenas o dado 'email' da sessão
-// Seu código aqui
 
-// 6. Exiba novamente os dados da sessão para confirmar a remoção
+// 5. Remova apenas o dado 'email' da sessão
+unset($_SESSION['email']);
+
+// // 6. Exiba novamente os dados da sessão para confirmar a remoção
 echo "<h3>Dados da Sessão após remoção:</h3>";
 echo "<pre>";
-// Seu código aqui
+print_r($_SESSION);
 echo "</pre>";
 
 // 7. Crie uma função que limpe todos os dados da sessão mas mantenha a sessão ativa
-// Seu código aqui
+/** 
+ * Remove todas as variáveis da sessão
+*/
+function clearSession() {
+    session_unset();
+}
 
 // 8. Destrua completamente a sessão
-// Seu código aqui
+clearSession();
+echo "<h3>Dados da Sessão após a limpeza:</h3>";
+echo "<pre>";
+print_r($_SESSION);
+echo "</pre>";
+
+session_destroy();
 ?>
