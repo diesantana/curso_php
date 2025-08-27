@@ -22,33 +22,20 @@ function contagemRegressiva($numeroInicial) {
     
     // SUA IMPLEMENTAÇÃO AQUI:
     // Use while para fazer a contagem regressiva
+    while($numeroInicial > 0) {
+        echo $numeroInicial . '<br>';
+        $numeroInicial--;
+    }
     
     return "Fogo!";
 }
-
-// 2. CALCULAR POTÊNCIA
-function calcularPotencia($base, $expoente) {
-    // Complete esta função para:
-    // - Calcular a potência usando multiplicações sucessivas
-    // - Usar um laço while para fazer as multiplicações
-    // - Retornar o resultado
-    
-    // SUA IMPLEMENTAÇÃO AQUI:
-    // Use while para calcular base^expoente
-    
-    return $resultado;
-}
-
-
 
 // ÁREA DE TESTES - VERIFIQUE SEUS RESULTADOS
 echo "<h2>Testes do Laço WHILE</h2>";
 
 echo "<h3>1. Contagem Regressiva:</h3>";
 echo contagemRegressiva(5);
-
-echo "<h3>2. Cálculo de Potência:</h3>";
-echo "2^5 = " . calcularPotencia(2, 5) . "<br>";
-echo "3^4 = " . calcularPotencia(3, 4) . "<br>";
+echo '<br><br>';
+echo contagemRegressiva(15);
 
 ?>
