@@ -12,40 +12,20 @@
 
 // 1. COMPARAÇÃO CASE-INSENSITIVE
 function saoIguaisIgnorandoCase($string1, $string2) {
-    // Substitua esta implementação manual:
-    $str1Lower = strtolower($string1);
-    $str2Lower = strtolower($string2);
-    return $str1Lower === $str2Lower;
-    
-    // Use uma única função nativa do PHP para comparação case-insensitive
-    // Dica: procure por funções de comparação que ignoram case
+    return strcasecmp($string1, $string2) == 0 ? true : false;     
 }
 
 // 2. VERIFICAÇÃO DE PREFIXO E SUFIXO
 function verificarExtremos($string, $prefixo, $sufixo) {
     // Substitua esta implementação manual:
-    $comecaCom = substr($string, 0, strlen($prefixo)) === $prefixo;
-    $terminaCom = substr($string, -strlen($sufixo)) === $sufixo;
+    $comecaCom = str_starts_with($string, $prefixo);
+    $terminaCom =  str_ends_with($string, $sufixo);
     return ['comeca' => $comecaCom, 'termina' => $terminaCom];
-    
-    // Use funções nativas do PHP para verificar início e fim
-    // Dica: PHP 8+ tem funções específicas para isso
 }
 
 // 3. CONTAGEM DE PALAVRAS
 function analisarTexto($texto) {
-    // Substitua esta implementação manual:
-    $palavras = explode(' ', trim($texto));
-    $contador = 0;
-    foreach ($palavras as $palavra) {
-        if (!empty(trim($palavra))) {
-            $contador++;
-        }
-    }
-    return $contador;
-    
-    // Use uma função nativa do PHP para contar palavras
-    // Dica: existe uma função específica para contar palavras em strings
+    return str_word_count($texto);
 }
 
 // ÁREA DE TESTES - VERIFIQUE SEUS RESULTADOS
@@ -54,6 +34,7 @@ echo "<h2>Testes de Strings</h2>";
 echo "<h3>1. Comparação Case-Insensitive:</h3>";
 echo "Hello vs hello: " . (saoIguaisIgnorandoCase('Hello', 'hello') ? 'IGUAIS' : 'DIFERENTES') . "<br>";
 echo "PHP vs Java: " . (saoIguaisIgnorandoCase('PHP', 'Java') ? 'IGUAIS' : 'DIFERENTES') . "<br>";
+echo "PHP vs php: " . (saoIguaisIgnorandoCase('PHP', 'php') ? 'IGUAIS' : 'DIFERENTES') . "<br>";
 
 echo "<h3>2. Verificação de Extremos:</h3>";
 $resultado1 = verificarExtremos('arquivo.txt', 'arq', '.txt');
