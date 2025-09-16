@@ -34,4 +34,8 @@ class Livro{
     public function setPages(int $newPages):void {
         $this->pages = $newPages;
     }
+
+    public function details():string {
+        return "{$this->title}, escrito por {$this->author}, possui {$this->pages} páginas.";
+    }
 }
