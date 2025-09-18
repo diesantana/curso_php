@@ -17,7 +17,15 @@ $livro1 = new Livro('1984', 'George Orwell', 328);
 $livro2 = new Livro('O Senhor dos Anéis', 'J.R.R. Tolkien', 1178);
 $livro3 = new Livro('Dom Casmurro', 'Machado de Assis', 256);
 
+// Adicionando livros a biblioteca
 $biblioteca = new Biblioteca();
 $biblioteca->adicionarLivro($livro1);
 $biblioteca->adicionarLivro($livro2);
 $biblioteca->adicionarLivro($livro3);
+
+// Listando os livros 
+$livros = $biblioteca->listarLivros();
+foreach($livros as $livro) {
+    echo $livro->details();
+    echo '<br>';
+}
