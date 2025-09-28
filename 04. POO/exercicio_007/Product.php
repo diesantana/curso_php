@@ -20,7 +20,7 @@ class Product {
     }
     
     public function setPrice(float $price) {
-        if ($price <= 0) {
+        if ($price < 0) {
             $this->price = 0;
             echo 'Preço inválido! Definido para 0.' . '<br>';
         } else{
